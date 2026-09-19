@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Admin - Prefect Board</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head><body><div class="app"><header>
+    <div class="header-icon">⚙️</div>
+    <h1>Admin Panel</h1>
+    <p>Manage Prefects</p>
+</header>
+
+<main class="card">
+
+    <h2>Add Prefect</h2>
+
+    <label for="prefectName">Prefect Name</label>
+
+    <input
+        type="text"
+        id="prefectName"
+        placeholder="Enter prefect name"
+    >
+
+    <label for="prefectNumber">WhatsApp Number</label>
+
+    <input
+        type="tel"
+        id="prefectNumber"
+        placeholder="0771234567"
+    >
+
+    <button id="addButton">
+        ➕ Add Prefect
+    </button>
+
+</main>
+
+<main class="card">
+
+    <h2>Prefect List</h2>
+
+    <div id="prefectList"></div>
+
+</main>
+
+<footer>
+    <p>T/TN Prefect Board (2026 - 2027)</p>
+</footer>
+
+</div><script>
+
+const prefectName =
+    document.getElementById("prefectName");
+
+const prefectNumber =
+    document.getElementById("prefectNumber");
+
+const addButton =
+    document.getElementById("addButton");
+
+const prefectList =
+    document.getElementById("prefectList");
+
+
+let prefects = JSON.parse(
+    localStorage.getItem("prefects") || "[]"
+);
+
+
+function savePrefects() {
+
+    localStorage.setItem(
+        "prefects",
+        JSON.stringify(prefects)
+    );
+
+}
+
+
+function showPrefects() {
+
+    prefectList.innerHTML = "";
+
+    if (prefects.length === 0) {
+
+        prefectList.innerHTML =
+            "<p class='empty-task'>No prefects added yet.</p>";
+
+        return;
+
+    }
+
+
+    prefects.forEach(function(prefect, index) {
+
+        const box =
+            document.createElement("div");
+
+        box.className = "task-box";
+
+
+        const name =
+            document.createElement("strong");
+
+        name.textContent =
+            prefect.name;
+
+
+        const number =
+            document.createElement("p");
+
+        number.textContent =
+            "📱 " + prefect.whatsapp;
+
+
+        const deleteButton =
+            document.createElement("button");
+
+        deleteButton.textContent =
+            "🗑️ Delete";
+
+        deleteButton.style.background =
+            "#dc2626";
+
+
+        deleteButton.addEventListener(
+            "click",
+            function() {
+
+                if (
+                    confirm(
+                        "Delete this prefect?"
+                    )
+                ) {
+
+                    prefects.splice(index, 1);
+
+                    savePrefects();
+
+                    showPrefects();
+
+                }
+
+            }
+        );
+
+
+        box.appendChild(name);
+
+        box.appendChild(number);
+
+        box.appendChild(deleteButton);
+
+        prefectList.appendChild(box);
+
+    });
+
+}
+
+
+addButton.addEventListener(
+    "click",
+    function() {
+
+        const name =
+            prefectName.value.trim();
+
+        const number =
+            prefectNumber.value.trim();
+
+
+        if (name === "" || number === "") {
+
+            alert(
+                "Please enter name and WhatsApp number."
+            );
+
+            return;
+
+        }
+
+
+        prefects.push({
+
+            name: name,
+
+            whatsapp: number
+
+        });
+
+
+        savePrefects();
+
+
+        prefectName.value = "";
+
+        prefectNumber.value = "";
+
+
+        showPrefects();
+
+    }
+);
+
+
+showPrefects();
+
+</script></body>
+</html>
