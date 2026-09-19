@@ -1,0 +1,314 @@
+ /* =========================
+   PREFECT BOARD - MOBILE UI
+   ========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2ff;
+    color: #1e293b;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Main App */
+.app {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    min-height: 100vh;
+    background: #f8fafc;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header {
+    background: linear-gradient(145deg, #172554, #1e3a8a);
+    color: white;
+    padding: 32px 20px 28px;
+    text-align: center;
+    border-radius: 0 0 28px 28px;
+    box-shadow: 0 8px 25px rgba(23, 37, 84, 0.22);
+}
+
+header h1 {
+    font-size: clamp(25px, 7vw, 32px);
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #bfdbfe;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================
+   CARDS
+   ========================= */
+
+.card {
+    background: #ffffff;
+    margin: 18px 12px;
+    padding: 22px 18px;
+    border-radius: 20px;
+    box-shadow: 0 6px 25px rgba(15, 23, 42, 0.07);
+    border: 1px solid #e2e8f0;
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    color: #172554;
+    font-size: 21px;
+    font-weight: 800;
+}
+
+/* =========================
+   LABELS
+   ========================= */
+
+label {
+    display: block;
+    margin-top: 17px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #334155;
+}
+
+/* =========================
+   INPUTS
+   ========================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 12px;
+    background: #ffffff;
+    color: #1e293b;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    transition: 0.2s ease;
+    appearance: auto;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* =========================
+   TEXTAREA
+   ========================= */
+
+textarea {
+    height: 135px;
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    color: white;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 14px rgba(22, 163, 74, 0.22);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    touch-action: manipulation;
+}
+
+button:active {
+    transform: scale(0.97);
+    box-shadow: 0 2px 8px rgba(22, 163, 74, 0.18);
+}
+
+/* =========================
+   ADMIN LINK
+   ========================= */
+
+.admin-link {
+    display: block;
+    width: fit-content;
+    margin: 16px auto 0;
+    padding: 11px 18px;
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.admin-link:active {
+    transform: scale(0.96);
+}
+
+/* =========================
+   TASK BOX
+   ========================= */
+
+.task-box {
+    padding: 16px;
+    margin-top: 14px;
+    background: #f8fafc;
+    border-radius: 14px;
+    border-left: 5px solid #2563eb;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.task-box p {
+    margin-top: 7px;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.task-box button {
+    margin-top: 13px;
+    background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer {
+    text-align: center;
+    color: #64748b;
+    padding: 25px 15px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* =========================
+   SMALL PHONES
+   ========================= */
+
+@media (max-width: 360px) {
+
+    header {
+        padding: 27px 15px 24px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .card {
+        margin: 15px 9px;
+        padding: 18px 14px;
+        border-radius: 17px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    input,
+    select,
+    textarea {
+        font-size: 16px;
+    }
+}
+
+/* =========================
+   TABLETS / LARGE SCREENS
+   ========================= */
+
+@media (min-width: 521px) {
+
+    body {
+        padding: 20px 0;
+    }
+
+    .app {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(15, 23, 42, 0.10);
+    }
+}
+
+/* =========================
+   EXTRA MOBILE UI
+   ========================= */
+
+.header-icon {
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 17px;
+    font-size: 28px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.section-title h2 {
+    margin-bottom: 0;
+}
+
+.task-count {
+    padding: 6px 10px;
+    background: #eff6ff;
+    color: #2563eb;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+footer small {
+    display: block;
+    margin-top: 5px;
+    color: #94a3b8;
+}

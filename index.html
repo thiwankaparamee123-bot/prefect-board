@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <meta name="theme-color" content="#172554">
+
+    <title>Prefect Board</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+        <header>
+
+            <div class="header-icon">
+                📋
+            </div>
+
+            <h1>Prefect Board</h1>
+
+            <p>
+                Task Management System
+            </p>
+
+            <a href="admin.html" class="admin-link">
+                ⚙️ Admin Panel
+            </a>
+
+        </header>
+
+
+        <!-- SEND TASK -->
+        <main class="card">
+
+            <h2>📤 Send a Task</h2>
+
+            <label for="prefectSelect">
+                Select Prefect
+            </label>
+
+            <select id="prefectSelect">
+
+                <option value="">
+                    -- Select Prefect --
+                </option>
+
+            </select>
+
+
+            <label for="taskMessage">
+                Task / Message
+            </label>
+
+            <textarea
+                id="taskMessage"
+                placeholder="Enter the task or message here..."
+            ></textarea>
+
+
+            <label for="taskDate">
+                Task Date
+            </label>
+
+            <input
+                type="date"
+                id="taskDate"
+            >
+
+
+            <button
+                type="button"
+                onclick="sendWhatsApp()"
+            >
+                📱 Send WhatsApp
+            </button>
+
+        </main>
+
+
+        <!-- TASKS -->
+        <main class="card">
+
+            <div class="section-title">
+
+                <h2>📌 Tasks</h2>
+
+                <span class="task-count">
+                    Tasks
+                </span>
+
+            </div>
+
+            <div id="taskList"></div>
+
+        </main>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <p>
+                Prefect Board System
+            </p>
+
+            <small>
+                Task management made simple
+            </small>
+
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
